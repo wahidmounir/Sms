@@ -1,0 +1,29 @@
+{
+    "name": "yoqut/sms",
+    "type": "library",
+    "description": "A SMS component for PHP applications.",
+    "keywords": ["yoqut", "library", "component", "sms"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sukhrob Khakimov",
+            "email": "sukhrob.khakimov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "dev-master"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {"Yoqut\\Component\\Sms\\": ""}
+    },
+    "autoload-dev": {
+        "psr-4": {"Yoqut\\Component\\Sms\\spec\\": "spec/"}
+    },
+    "minimum-stability": "dev"
+}
