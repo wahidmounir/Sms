@@ -24,6 +24,5 @@
     },
     "autoload-dev": {
         "psr-4": {"Yoqut\\Component\\Sms\\spec\\": "spec/"}
-    },
-    "minimum-stability": "dev"
+    }
 }
