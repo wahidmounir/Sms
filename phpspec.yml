@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Yoqut\Component\Sms
+        psr4_prefix: Yoqut\Component\Sms
+        src_path: .
