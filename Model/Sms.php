@@ -19,32 +19,39 @@ namespace Yoqut\Component\Sms\Model;
 class Sms implements SmsInterface
 {
     /**
+     * The SMS is sent to an operator
+     *
+     * @var integer
+     */
+    const STATUS_SENT = 0;
+
+    /**
      * The SMS is accepted by an operator
      *
      * @var integer
      */
-    const STATUS_ACCEPTED = 0;
+    const STATUS_ACCEPTED = 1;
 
     /**
      * The SMS is rejected by an operator
      *
      * @var integer
      */
-    const STATUS_REJECTED = 1;
+    const STATUS_REJECTED = 2;
 
     /**
      * The SMS is delivered to a recipient
      *
      * @var integer
      */
-    const STATUS_DELIVERED = 2;
+    const STATUS_DELIVERED = 3;
 
     /**
      * The SMS is not delivered to a recipient
      *
      * @var integer
      */
-    const STATUS_FAILED = 3;
+    const STATUS_FAILED = 4;
 
     /**
      * The unique id of an SMS
