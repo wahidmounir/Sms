@@ -61,6 +61,20 @@ interface SmsInterface
     public function getMessage();
 
     /**
+     * Sets the status
+     *
+     * @param integer $status
+     */
+    public function setStatus($status);
+
+    /**
+     * Gets the status
+     *
+     * @return integer
+     */
+    public function getStatus();
+
+    /**
      * Sets the created date
      *
      * @param \DateTime $createdAt
