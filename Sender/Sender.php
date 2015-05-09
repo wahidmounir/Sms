@@ -12,6 +12,7 @@
 namespace Yoqut\Component\Sms\Sender;
 
 use Yoqut\Component\Sms\Model\SmsInterface;
+use Yoqut\Component\Sms\Model\GatewayInterface;
 
 /**
  * The default sender implementation
@@ -23,7 +24,7 @@ class Sender implements SenderInterface
     /**
      * {@inheritDoc}
      */
-    public function send(SmsInterface $sms)
+    public function send(SmsInterface $sms, GatewayInterface $gateway)
     {
         // Implement
     }

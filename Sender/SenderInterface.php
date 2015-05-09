@@ -12,6 +12,7 @@
 namespace Yoqut\Component\Sms\Sender;
 
 use Yoqut\Component\Sms\Model\SmsInterface;
+use Yoqut\Component\Sms\Model\GatewayInterface;
 
 /**
  * The sender interface
@@ -21,10 +22,11 @@ use Yoqut\Component\Sms\Model\SmsInterface;
 interface SenderInterface
 {
     /**
-     * Sends an SMS
+     * Sends an SMS to a gateway
      *
      * @param SmsInterface $sms
+     * @param GatewayInterface $gateway
      * @return boolean
      */
-    public function send(SmsInterface $sms);
+    public function send(SmsInterface $sms, GatewayInterface $gateway);
 }
