@@ -35,7 +35,7 @@ class Gateway implements GatewayInterface
     /**
      * The port of a gateway
      *
-     * @var string
+     * @var integer
      */
     protected $port;
 

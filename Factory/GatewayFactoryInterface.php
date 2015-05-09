@@ -24,7 +24,7 @@ interface GatewayFactoryInterface
      * Creates a new gateway
      *
      * @param string $host
-     * @param string $port
+     * @param integer $port
      * @param string $username
      * @param string $password
      * @return GatewayInterface

@@ -28,7 +28,7 @@ interface GatewayInterface
     /**
      * Gets the port
      *
-     * @return string
+     * @return integer
      */
     public function getPort();
 
