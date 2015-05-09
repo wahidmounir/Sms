@@ -18,5 +18,31 @@ namespace Yoqut\Component\Sms\Model;
  */
 interface GatewayInterface
 {
+    /**
+     * Gets the host
+     *
+     * @return string
+     */
+    public function getHost();
 
+    /**
+     * Gets the port
+     *
+     * @return string
+     */
+    public function getPort();
+
+    /**
+     * Gets the username
+     *
+     * @return string
+     */
+    public function getUsername();
+
+    /**
+     * Gets the password
+     *
+     * @return string
+     */
+    public function getPassword();
 }
