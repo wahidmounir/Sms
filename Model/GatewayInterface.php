@@ -45,4 +45,11 @@ interface GatewayInterface
      * @return string
      */
     public function getPassword();
+
+    /**
+     * Gets the prefixes
+     *
+     * @return array
+     */
+    public function getPrefixes();
 }
