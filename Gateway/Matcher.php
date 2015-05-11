@@ -51,9 +51,8 @@ class Matcher implements MatcherInterface
 
             foreach ($gateway->getPrefixes() as $prefix) {
                 $recipient = $sms->getRecipient();
-                $position = strrpos($recipient, $prefix, -strlen($recipient));
 
-                if ($prefix != '' && $position !== false) {
+                if ($prefix != '' && strrpos($recipient, $prefix, -strlen($recipient)) !== false) {
                     return $gateway;
                 }
             }
