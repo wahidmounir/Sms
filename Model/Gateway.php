@@ -69,7 +69,7 @@ class Gateway implements GatewayInterface
      * @param string $password
      * @param array $prefixes
      */
-    public function __construct($host, $port, $username, $password, $prefixes = array())
+    public function __construct($host, $port, $username, $password, array $prefixes = array())
     {
         $this->host = $host;
         $this->port = $port;

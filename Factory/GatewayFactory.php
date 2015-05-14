@@ -23,8 +23,8 @@ class GatewayFactory implements GatewayFactoryInterface
     /**
      * {@inheritDoc}
      */
-    public static function create($host, $port, $username, $password)
+    public static function create($host, $port, $username, $password, array $prefixes = array())
     {
-        return new Gateway($host, $port, $username, $password);
+        return new Gateway($host, $port, $username, $password, $prefixes);
     }
 }
