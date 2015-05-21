@@ -26,6 +26,21 @@ class Sender implements SenderInterface
      */
     public function send(SmsInterface $sms, GatewayInterface $gateway)
     {
-        // Implement
+        $transport = new \SocketTransport(array($gateway->getHost()), $gateway->getPort());
+        $transport->setRecvTimeout(10000);
+        $transport->debug = true;
+
+        $smpp = new \SmppClient($transport);
+        $smpp->debug = true;
+
+        $transport->open();
+        $smpp->bindTransmitter($gateway->getUsername(), $gateway->getPassword());
+
+        $message = \GsmEncoder::utf8_to_gsm0338($sms->getMessage());
+        $sender = new \SmppAddress($sms->getSender(), \SMPP::TON_ALPHANUMERIC);
+        $recipient = new \SmppAddress($sms->getRecipient(), \SMPP::TON_INTERNATIONAL, \SMPP::NPI_E164);
+
+        $smpp->sendSMS($sender, $recipient, $message);
+        $smpp->close();
     }
 }
