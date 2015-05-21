@@ -26,7 +26,7 @@ interface SenderInterface
      *
      * @param SmsInterface $sms
      * @param GatewayInterface $gateway
-     * @return boolean
+     * @return mixed
      */
     public function send(SmsInterface $sms, GatewayInterface $gateway);
 }
