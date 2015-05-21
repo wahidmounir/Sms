@@ -2,7 +2,7 @@
     "name": "yoqut/sms",
     "type": "library",
     "description": "An SMS component for PHP applications.",
-    "keywords": ["yoqut", "library", "component", "sms"],
+    "keywords": ["yoqut", "library", "component", "sms", "smpp"],
     "license": "MIT",
     "authors": [
         {
@@ -11,7 +11,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.3.3",
+        "php-smpp/php-smpp": "dev-master"
     },
     "require-dev": {
         "phpspec/phpspec": "~2.1"
