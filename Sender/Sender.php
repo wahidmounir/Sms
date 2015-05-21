@@ -40,7 +40,9 @@ class Sender implements SenderInterface
         $sender = new \SmppAddress($sms->getSender(), \SMPP::TON_ALPHANUMERIC);
         $recipient = new \SmppAddress($sms->getRecipient(), \SMPP::TON_INTERNATIONAL, \SMPP::NPI_E164);
 
-        $smpp->sendSMS($sender, $recipient, $message);
+        $messageId = $smpp->sendSMS($sender, $recipient, $message);
         $smpp->close();
+
+        return $messageId;
     }
 }
