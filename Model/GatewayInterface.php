@@ -47,6 +47,13 @@ interface GatewayInterface
     public function getPassword();
 
     /**
+     * Gets the service number
+     *
+     * @return string
+     */
+    public function getServiceNumber();
+
+    /**
      * Gets the prefixes
      *
      * @return array
