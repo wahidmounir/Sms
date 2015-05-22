@@ -49,10 +49,10 @@ class Matcher implements MatcherInterface
                 throw new InvalidGatewayException();
             }
 
-            foreach ($gateway->getPrefixes() as $prefix) {
+            foreach ($gateway->getPrefixPatterns() as $prefixPattern) {
                 $recipient = $sms->getRecipient();
 
-                if ($prefix != '' && strrpos($recipient, $prefix, -strlen($recipient)) !== false) {
+                if ($prefixPattern != '' && strrpos($recipient, $prefixPattern, -strlen($recipient)) !== false) {
                     return $gateway;
                 }
             }

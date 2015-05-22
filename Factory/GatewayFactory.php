@@ -29,7 +29,7 @@ class GatewayFactory implements GatewayFactoryInterface
         $username,
         $password,
         $serviceNumber = null,
-        array $prefixes = array()
+        array $prefixPatterns = array()
     ) {
         return new Gateway(
             $host,
@@ -37,7 +37,7 @@ class GatewayFactory implements GatewayFactoryInterface
             $username,
             $password,
             $serviceNumber,
-            $prefixes
+            $prefixPatterns
         );
     }
 }

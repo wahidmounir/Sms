@@ -28,7 +28,7 @@ interface GatewayFactoryInterface
      * @param string $username
      * @param string $password
      * @param string $serviceNumber
-     * @param array $prefixes
+     * @param array $prefixPatterns
      * @return GatewayInterface
      */
     public static function create(
@@ -37,6 +37,6 @@ interface GatewayFactoryInterface
         $username,
         $password,
         $serviceNumber = null,
-        array $prefixes = array()
+        array $prefixPatterns = array()
     );
 }
