@@ -1,1 +1,1 @@
-# Sms
+# Sms Component [![License](https://poser.pugx.org/yoqut/sms/license.svg)](https://packagist.org/packages/yoqut/sms) [![Build Status](https://travis-ci.org/Yoqut/Sms.svg?branch=master)](https://travis-ci.org/Yoqut/Sms) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Yoqut/Sms/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Yoqut/Sms/?branch=master)
