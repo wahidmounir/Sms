@@ -23,35 +23,35 @@ class Sms implements SmsInterface
      *
      * @var integer
      */
-    const STATUS_SENT = 0;
+    const STATE_SENT = 0;
 
     /**
      * The SMS is accepted by an operator
      *
      * @var integer
      */
-    const STATUS_ACCEPTED = 1;
+    const STATE_ACCEPTED = 1;
 
     /**
      * The SMS is rejected by an operator
      *
      * @var integer
      */
-    const STATUS_REJECTED = 2;
+    const STATE_REJECTED = 2;
 
     /**
      * The SMS is delivered to a recipient
      *
      * @var integer
      */
-    const STATUS_DELIVERED = 3;
+    const STATE_DELIVERED = 3;
 
     /**
      * The SMS is not delivered to a recipient
      *
      * @var integer
      */
-    const STATUS_FAILED = 4;
+    const STATE_FAILED = 4;
 
     /**
      * The unique id of an SMS
@@ -82,11 +82,11 @@ class Sms implements SmsInterface
     protected $message;
 
     /**
-     * The status of an SMS
+     * The state of an SMS
      *
      * @var integer
      */
-    protected $status;
+    protected $state;
 
     /**
      * The created date of an SMS
@@ -170,9 +170,13 @@ class Sms implements SmsInterface
     /**
      * {@inheritDoc}
      */
-    public function setStatus($status)
+    public function setState($state)
     {
-        $this->status = $status;
+        if (!array_key_exists($state, self::getStates())) {
+            throw new \InvalidArgumentException();
+        }
+
+        $this->state = $state;
 
         return $this;
     }
@@ -180,9 +184,9 @@ class Sms implements SmsInterface
     /**
      * {@inheritDoc}
      */
-    public function getStatus()
+    public function getState()
     {
-        return $this->status;
+        return $this->state;
     }
 
     /**
@@ -201,5 +205,21 @@ class Sms implements SmsInterface
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * Gets all the states
+     *
+     * @return array
+     */
+    public static function getStates()
+    {
+        return array(
+            self::STATE_SENT,
+            self::STATE_ACCEPTED,
+            self::STATE_REJECTED,
+            self::STATE_DELIVERED,
+            self::STATE_FAILED,
+        );
     }
 }

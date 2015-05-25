@@ -61,18 +61,19 @@ interface SmsInterface
     public function getMessage();
 
     /**
-     * Sets the status
+     * Sets the state
      *
-     * @param integer $status
+     * @param integer $state
+     * @throws \InvalidArgumentException
      */
-    public function setStatus($status);
+    public function setState($state);
 
     /**
-     * Gets the status
+     * Gets the state
      *
      * @return integer
      */
-    public function getStatus();
+    public function getState();
 
     /**
      * Sets the created date
