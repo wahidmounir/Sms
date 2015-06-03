@@ -79,19 +79,35 @@ class GatewaySpec extends ObjectBehavior
         $this->shouldNotHaveMethod('setServiceNumber');
     }
 
-    function its_prefix_patterns_should_be_array()
+    function its_prefix_codes_should_be_array()
     {
-        $this->getPrefixPatterns()->shouldBeArray();
+        $this->getPrefixCodes()->shouldBeArray();
     }
 
-    function it_has_no_prefix_patterns_by_default()
+    function it_has_no_prefix_codes_by_default()
     {
-        $this->getPrefixPatterns()->shouldHaveCount(0);
+        $this->getPrefixCodes()->shouldHaveCount(0);
     }
 
-    function its_prefix_patterns_are_immutable()
+    function its_prefix_codes_are_immutable()
     {
-        $this->shouldNotHaveMethod('addPrefixPattern');
-        $this->shouldNotHaveMethod('removePrefixPattern');
+        $this->shouldNotHaveMethod('addPrefixCode');
+        $this->shouldNotHaveMethod('removePrefixCode');
+    }
+
+    function its_configs_should_be_array()
+    {
+        $this->getConfigs()->shouldBeArray();
+    }
+
+    function it_has_no_configs_by_default()
+    {
+        $this->getConfigs()->shouldHaveCount(0);
+    }
+
+    function its_configs_are_immutable()
+    {
+        $this->shouldNotHaveMethod('addConfig');
+        $this->shouldNotHaveMethod('removeConfig');
     }
 }
