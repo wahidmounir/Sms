@@ -61,11 +61,18 @@ class Gateway implements GatewayInterface
     protected $serviceNumber;
 
     /**
-     * The prefix patterns of a gateway
+     * The prefix codes of a gateway
      *
      * @var array
      */
-    protected $prefixPatterns;
+    protected $prefixCodes;
+
+    /**
+     * Configurations of a gateway
+     *
+     * @var array
+     */
+    protected $configs;
 
     /**
      * Constructor
@@ -75,7 +82,8 @@ class Gateway implements GatewayInterface
      * @param string $username
      * @param string $password
      * @param string $serviceNumber
-     * @param array $prefixPatterns
+     * @param array $prefixCodes
+     * @param array $configs
      */
     public function __construct(
         $host,
@@ -83,14 +91,16 @@ class Gateway implements GatewayInterface
         $username,
         $password,
         $serviceNumber = null,
-        array $prefixPatterns = array()
+        array $prefixCodes = array(),
+        array $configs = array()
     ) {
         $this->host = $host;
         $this->port = $port;
         $this->username = $username;
         $this->password = $password;
         $this->serviceNumber = $serviceNumber;
-        $this->prefixPatterns = $prefixPatterns;
+        $this->prefixCodes = $prefixCodes;
+        $this->configs = $configs;
     }
 
     /**
@@ -146,8 +156,16 @@ class Gateway implements GatewayInterface
     /**
      * {@inheritDoc}
      */
-    public function getPrefixPatterns()
+    public function getPrefixCodes()
     {
-        return $this->prefixPatterns;
+        return $this->prefixCodes;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getConfigs()
+    {
+        return $this->configs;
     }
 }

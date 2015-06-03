@@ -54,9 +54,16 @@ interface GatewayInterface
     public function getServiceNumber();
 
     /**
-     * Gets the prefix patterns
+     * Gets the prefix codes
      *
      * @return array
      */
-    public function getPrefixPatterns();
+    public function getPrefixCodes();
+
+    /**
+     * Gets the configurations
+     *
+     * @return array
+     */
+    public function getConfigs();
 }
