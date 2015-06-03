@@ -5,7 +5,7 @@ An SMS component for PHP applications.
 ## Installation
 composer.json
 ```json
-{
+{p
     "require": {
         "yoqut/sms": "~1.0"
     }
@@ -31,7 +31,7 @@ $sms->setRecipient('+5550100');
 $sms->setMessage('Message');
 
 // Create a new gateway
-// Provide host, port, username, password, service number (optional) and prefix patterns (optional)
+// Provide host, port, username, password, service number (optional) and prefix codes (optional)
 $gateway = GatewayFactory::create(
     'localhost',
     2775,
