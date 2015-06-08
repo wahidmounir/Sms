@@ -5,7 +5,7 @@ An SMS component for PHP applications.
 ## Installation
 composer.json
 ```json
-{p
+{
     "require": {
         "yoqut/sms": "~1.0"
     }
