@@ -68,11 +68,24 @@ class Gateway implements GatewayInterface
     protected $prefixCodes;
 
     /**
-     * Configurations of a gateway
+     * The default configurations of a gateway
      *
      * @var array
      */
-    protected $configs;
+    protected $configs = array(
+        'persistent' => false,
+        'debug' => false,
+        'sender' => array(
+            'timeout' => 10000,
+            'ton' => \SMPP::TON_UNKNOWN,
+            'npi' => \SMPP::NPI_UNKNOWN
+        ),
+        'recipient' => array(
+            'timeout' => 10000,
+            'ton' => \SMPP::TON_INTERNATIONAL,
+            'npi' => \SMPP::NPI_E164
+        )
+    );
 
     /**
      * Constructor
@@ -100,7 +113,7 @@ class Gateway implements GatewayInterface
         $this->password = $password;
         $this->serviceNumber = $serviceNumber;
         $this->prefixCodes = $prefixCodes;
-        $this->configs = $configs;
+        $this->configs = array_merge($this->configs, $configs);
     }
 
     /**
