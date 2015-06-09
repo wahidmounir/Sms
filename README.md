@@ -7,7 +7,7 @@ composer.json
 ```json
 {
     "require": {
-        "yoqut/sms": "~1.0"
+        "yoqut/sms": "~2.0"
     }
 }
 ```
