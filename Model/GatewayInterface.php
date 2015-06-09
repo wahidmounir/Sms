@@ -47,11 +47,11 @@ interface GatewayInterface
     public function getPassword();
 
     /**
-     * Gets the service number
+     * Gets the service numbers
      *
-     * @return string
+     * @return array
      */
-    public function getServiceNumber();
+    public function getServiceNumbers();
 
     /**
      * Gets the prefix codes

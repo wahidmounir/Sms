@@ -27,7 +27,7 @@ interface GatewayFactoryInterface
      * @param integer $port
      * @param string $username
      * @param string $password
-     * @param string $serviceNumber
+     * @param array $serviceNumbers
      * @param array $prefixCodes
      * @param array $configs
      * @return GatewayInterface
@@ -37,7 +37,7 @@ interface GatewayFactoryInterface
         $port,
         $username,
         $password,
-        $serviceNumber = null,
+        array $serviceNumbers = array(),
         array $prefixCodes = array(),
         array $configs = array()
     );

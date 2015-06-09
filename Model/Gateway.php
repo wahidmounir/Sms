@@ -54,11 +54,11 @@ class Gateway implements GatewayInterface
     protected $password;
 
     /**
-     * The service number of a gateway
+     * The service numbers of a gateway
      *
-     * @var string
+     * @var array
      */
-    protected $serviceNumber;
+    protected $serviceNumbers;
 
     /**
      * The prefix codes of a gateway
@@ -94,7 +94,7 @@ class Gateway implements GatewayInterface
      * @param integer $port
      * @param string $username
      * @param string $password
-     * @param string $serviceNumber
+     * @param array $serviceNumbers
      * @param array $prefixCodes
      * @param array $configs
      */
@@ -103,7 +103,7 @@ class Gateway implements GatewayInterface
         $port,
         $username,
         $password,
-        $serviceNumber = null,
+        array $serviceNumbers = array(),
         array $prefixCodes = array(),
         array $configs = array()
     ) {
@@ -111,7 +111,7 @@ class Gateway implements GatewayInterface
         $this->port = $port;
         $this->username = $username;
         $this->password = $password;
-        $this->serviceNumber = $serviceNumber;
+        $this->serviceNumbers = $serviceNumbers;
         $this->prefixCodes = $prefixCodes;
         $this->configs = array_merge($this->configs, $configs);
     }
@@ -161,9 +161,9 @@ class Gateway implements GatewayInterface
     /**
      * {@inheritDoc}
      */
-    public function getServiceNumber()
+    public function getServiceNumbers()
     {
-        return $this->serviceNumber;
+        return $this->serviceNumbers;
     }
 
     /**

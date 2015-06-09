@@ -28,7 +28,7 @@ class GatewayFactory implements GatewayFactoryInterface
         $port,
         $username,
         $password,
-        $serviceNumber = null,
+        array $serviceNumbers = array(),
         array $prefixCodes = array(),
         array $configs = array()
     ) {
@@ -37,7 +37,7 @@ class GatewayFactory implements GatewayFactoryInterface
             $port,
             $username,
             $password,
-            $serviceNumber,
+            $serviceNumbers,
             $prefixCodes,
             $configs
         );
