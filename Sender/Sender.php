@@ -26,20 +26,40 @@ class Sender implements SenderInterface
      */
     public function send(SmsInterface $sms, GatewayInterface $gateway)
     {
-        $transport = new \SocketTransport(array($gateway->getHost()), $gateway->getPort());
-        $transport->setSendTimeout(10000);
-        $transport->debug = true;
+        // Get the gateway configurations
+        $configs = $gateway->getConfigs();
 
+        // Create a new socket transport
+        $transport = new \SocketTransport(
+            array($gateway->getHost()),
+            $gateway->getPort(),
+            $configs['persistent']
+        );
+        $transport->setSendTimeout($configs['sender']['timeout']);
+        $transport->debug = $configs['debug'];
+
+        // Create a new SMPP client
         $smpp = new \SmppClient($transport);
-        $smpp->debug = true;
+        $smpp->debug = $configs['debug'];
 
+        // Open the connection
         $transport->open();
         $smpp->bindTransmitter($gateway->getUsername(), $gateway->getPassword());
 
-        $sender = new \SmppAddress($sms->getSender(), \SMPP::TON_ALPHANUMERIC);
-        $recipient = new \SmppAddress($sms->getRecipient(), \SMPP::TON_INTERNATIONAL, \SMPP::NPI_E164);
+        // Configure a sender, recipient and message
+        $sender = new \SmppAddress(
+            $sms->getSender(),
+            $configs['sender']['ton'],
+            $configs['sender']['npi']
+        );
+        $recipient = new \SmppAddress(
+            $sms->getRecipient(),
+            $configs['recipient']['ton'],
+            $configs['recipient']['npi']
+        );
         $message = \GsmEncoder::utf8_to_gsm0338($sms->getMessage());
 
+        // Send an SMS and close the connection
         $messageId = $smpp->sendSMS($sender, $recipient, $message);
         $smpp->close();
 
