@@ -27,18 +27,22 @@ use Yoqut\Component\Sms\Sender\Sender;
 // Create a new SMS
 $sms = SmsFactory::create();
 $sms->setSender('Sender');
-$sms->setRecipient('+5550100');
+$sms->setRecipient('5550100');
 $sms->setMessage('Message');
 
 // Create a new gateway
-// Provide host, port, username, password, service number (optional) and prefix codes (optional)
+// Provide host, port, username, password, service numbers (optional),
+// prefix codes (optional) and configurations (optional)
 $gateway = GatewayFactory::create(
     'localhost',
     2775,
     'username',
     'password',
-    '5555',
-    array('+555')
+    array(
+        '5555', // Production
+        '4444' // Development
+    ),
+    array('555')
 );
 
 // Array of gateways
@@ -53,8 +57,12 @@ echo '<pre>';
 print_r($matchedGateway);
 echo '</pre>';
 
-// Send an SMS to the matched gateway
 if ($matchedGateway) {
+    // Use one of the gateway service numbers as a sender if needed
+    $serviceNumbers = $gateway->getServiceNumbers();
+    $sms->setSender($serviceNumbers[0]);
+
+    // Send an SMS to the matched gateway
     $sender = new Sender();
     $messageId = $sender->send($sms, $matchedGateway);
     echo $messageId;
