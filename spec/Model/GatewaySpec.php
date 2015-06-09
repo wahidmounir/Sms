@@ -69,14 +69,20 @@ class GatewaySpec extends ObjectBehavior
         $this->shouldNotHaveMethod('setPassword');
     }
 
-    function it_has_no_service_number_by_default()
+    function its_service_numbers_should_be_array()
     {
-        $this->getServiceNumber()->shouldReturn(null);
+        $this->getServiceNumbers()->shouldBeArray();
     }
 
-    function its_service_number_is_immutable()
+    function it_has_no_service_numbers_by_default()
     {
-        $this->shouldNotHaveMethod('setServiceNumber');
+        $this->getServiceNumbers()->shouldHaveCount(0);
+    }
+
+    function its_service_numbers_are_immutable()
+    {
+        $this->shouldNotHaveMethod('addServiceNumber');
+        $this->shouldNotHaveMethod('removeServiceNumber');
     }
 
     function its_prefix_codes_should_be_array()
@@ -100,9 +106,9 @@ class GatewaySpec extends ObjectBehavior
         $this->getConfigs()->shouldBeArray();
     }
 
-    function it_has_no_configs_by_default()
+    function it_has_configs_by_default()
     {
-        $this->getConfigs()->shouldHaveCount(0);
+        $this->getConfigs()->shouldNotHaveCount(0);
     }
 
     function its_configs_are_immutable()

@@ -19,7 +19,7 @@ class MatcherSpec extends ObjectBehavior
             2775,
             'username',
             'password',
-            '5555',
+            array('5555'),
             array('+555')
         );
 
