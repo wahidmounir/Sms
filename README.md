@@ -16,6 +16,12 @@ composer.json
 php composer.phar install
 ```
 
+or
+
+```shell
+php composer.phar require yoqut/sms
+```
+
 ## Usage
 ```php
 // Imports
