@@ -113,7 +113,7 @@ class Gateway implements GatewayInterface
         $this->password = $password;
         $this->serviceNumbers = $serviceNumbers;
         $this->prefixCodes = $prefixCodes;
-        $this->configs = array_merge($this->configs, $configs);
+        $this->configs = array_replace_recursive($this->configs, $configs);
     }
 
     /**
