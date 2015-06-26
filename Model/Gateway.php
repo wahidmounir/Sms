@@ -75,13 +75,13 @@ class Gateway implements GatewayInterface
     protected $configs = array(
         'persistent' => false,
         'debug' => false,
+        'send_timeout' => 10000,
+        'receive_timeout' => 10000,
         'sender' => array(
-            'timeout' => 10000,
             'ton' => \SMPP::TON_UNKNOWN,
             'npi' => \SMPP::NPI_UNKNOWN
         ),
         'recipient' => array(
-            'timeout' => 10000,
             'ton' => \SMPP::TON_INTERNATIONAL,
             'npi' => \SMPP::NPI_E164
         )

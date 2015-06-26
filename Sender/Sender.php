@@ -35,7 +35,8 @@ class Sender implements SenderInterface
             $gateway->getPort(),
             $configs['persistent']
         );
-        $transport->setSendTimeout($configs['sender']['timeout']);
+        $transport->setSendTimeout($configs['send_timeout']);
+        $transport->setRecvTimeout($configs['receive_timeout']);
         $transport->debug = $configs['debug'];
 
         // Create a new SMPP client
