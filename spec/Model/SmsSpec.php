@@ -88,7 +88,7 @@ class SmsSpec extends ObjectBehavior
     {
         $this
             ->shouldThrow('\InvalidArgumentException')
-            ->duringSetState('invalid');
+            ->duringSetState(-1);
     }
 
     function it_has_creation_date_by_default()
