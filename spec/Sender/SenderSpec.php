@@ -10,4 +10,9 @@ class SenderSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Yoqut\Component\Sms\Sender\Sender');
     }
+
+    function it_implements_Yoqut_sender_interface()
+    {
+        $this->shouldImplement('Yoqut\Component\Sms\Sender\SenderInterface');
+    }
 }

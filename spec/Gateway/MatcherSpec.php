@@ -32,6 +32,11 @@ class MatcherSpec extends ObjectBehavior
         $this->shouldHaveType('Yoqut\Component\Sms\Gateway\Matcher');
     }
 
+    function it_implements_Yoqut_matcher_interface()
+    {
+        $this->shouldImplement('Yoqut\Component\Sms\Gateway\MatcherInterface');
+    }
+
     function it_should_not_throw_exception_if_gateway_is_valid(SmsInterface $sms, GatewayInterface $gateway)
     {
         $this
