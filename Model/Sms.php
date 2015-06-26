@@ -172,7 +172,7 @@ class Sms implements SmsInterface
      */
     public function setState($state)
     {
-        if (!array_key_exists($state, self::getStates())) {
+        if (!in_array($state, self::getStates())) {
             throw new \InvalidArgumentException();
         }
 
