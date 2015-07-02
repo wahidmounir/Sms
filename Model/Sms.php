@@ -96,6 +96,13 @@ class Sms implements SmsInterface
     protected $createdAt;
 
     /**
+     * The updated date of an SMS
+     *
+     * @var \DateTime
+     */
+    protected $updatedAt;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -205,6 +212,24 @@ class Sms implements SmsInterface
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUpdatedAt(\DateTime $updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 
     /**

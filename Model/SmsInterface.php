@@ -88,4 +88,18 @@ interface SmsInterface
      * @return \DateTime
      */
     public function getCreatedAt();
+
+    /**
+     * Sets the updated date
+     *
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt(\DateTime $updatedAt);
+
+    /**
+     * Gets the updated date
+     *
+     * @return \DateTime|null
+     */
+    public function getUpdatedAt();
 }
