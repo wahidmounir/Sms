@@ -102,4 +102,16 @@ class SmsSpec extends ObjectBehavior
         $this->setCreatedAt($date);
         $this->getCreatedAt()->shouldReturn($date);
     }
+
+    function it_has_no_updated_date_by_default()
+    {
+        $this->getUpdatedAt()->shouldReturn(null);
+    }
+
+    function its_updated_date_is_mutable()
+    {
+        $date = new \DateTime();
+        $this->setUpdatedAt($date);
+        $this->getUpdatedAt()->shouldReturn($date);
+    }
 }
