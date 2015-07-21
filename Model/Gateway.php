@@ -26,6 +26,13 @@ class Gateway implements GatewayInterface
     protected $id;
 
     /**
+     * The name of a gateway
+     *
+     * @var string
+     */
+    protected $name;
+
+    /**
      * The host of a gateway
      *
      * @var string
@@ -124,6 +131,24 @@ class Gateway implements GatewayInterface
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**

@@ -49,6 +49,18 @@ class GatewaySpec extends ObjectBehavior
         $this->shouldNotHaveMethod('setId');
     }
 
+    function it_has_no_name_by_default()
+    {
+        $this->getName()->shouldReturn(null);
+    }
+
+    function its_name_is_mutable()
+    {
+        $name = 'name';
+        $this->setName($name);
+        $this->getName()->shouldReturn($name);
+    }
+
     function its_host_is_immutable()
     {
         $this->shouldNotHaveMethod('setHost');

@@ -19,6 +19,20 @@ namespace Yoqut\Component\Sms\Model;
 interface GatewayInterface
 {
     /**
+     * Sets the name
+     *
+     * @param string $name
+     */
+    public function setName($name);
+
+    /**
+     * Gets the name
+     *
+     * @return string
+     */
+    public function getName();
+
+    /**
      * Gets the host
      *
      * @return string
