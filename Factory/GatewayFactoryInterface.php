@@ -25,6 +25,7 @@ interface GatewayFactoryInterface
      *
      * @param string $host
      * @param integer $port
+     * @param integer $interfaceVersion
      * @param string $username
      * @param string $password
      * @param array $serviceNumbers
@@ -35,6 +36,7 @@ interface GatewayFactoryInterface
     public static function create(
         $host,
         $port,
+        $interfaceVersion,
         $username,
         $password,
         array $serviceNumbers = array(),

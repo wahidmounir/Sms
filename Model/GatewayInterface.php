@@ -47,6 +47,13 @@ interface GatewayInterface
     public function getPort();
 
     /**
+     * Gets the interface version (E.g. 0x34, 0x50, etc)
+     *
+     * @return integer
+     */
+    public function getInterfaceVersion();
+
+    /**
      * Gets the username
      *
      * @return string

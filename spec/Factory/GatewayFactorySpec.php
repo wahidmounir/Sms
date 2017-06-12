@@ -19,12 +19,14 @@ class GatewayFactorySpec extends ObjectBehavior
     function its_create_method_should_return_new_gateway(
         $host,
         $port,
+        $interfaceVersion,
         $username,
         $password
     ) {
         $this->create(
             $host,
             $port,
+            $interfaceVersion,
             $username,
             $password
         )->shouldHaveType('Yoqut\Component\Sms\Model\Gateway');

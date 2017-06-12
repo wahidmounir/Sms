@@ -17,6 +17,7 @@ class MatcherSpec extends ObjectBehavior
         $gateway = new Gateway(
             'localhost',
             2775,
+            0x34,
             'username',
             'password',
             array('5555'),

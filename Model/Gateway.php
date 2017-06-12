@@ -47,6 +47,13 @@ class Gateway implements GatewayInterface
     protected $port;
 
     /**
+     * The interfaceVersion of a gateway
+     *
+     * @var integer
+     */
+    protected $interfaceVersion;
+
+    /**
      * The username of a gateway
      *
      * @var string
@@ -99,6 +106,7 @@ class Gateway implements GatewayInterface
      *
      * @param string $host
      * @param integer $port
+     * @param integer $interfaceVersion
      * @param string $username
      * @param string $password
      * @param array $serviceNumbers
@@ -108,6 +116,7 @@ class Gateway implements GatewayInterface
     public function __construct(
         $host,
         $port,
+        $interfaceVersion,
         $username,
         $password,
         array $serviceNumbers = array(),
@@ -116,6 +125,7 @@ class Gateway implements GatewayInterface
     ) {
         $this->host = $host;
         $this->port = $port;
+        $this->interfaceVersion = $interfaceVersion;
         $this->username = $username;
         $this->password = $password;
         $this->serviceNumbers = $serviceNumbers;
@@ -165,6 +175,14 @@ class Gateway implements GatewayInterface
     public function getPort()
     {
         return $this->port;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getInterfaceVersion()
+    {
+        return $this->interfaceVersion;
     }
 
     /**

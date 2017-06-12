@@ -26,6 +26,7 @@ class GatewayFactory implements GatewayFactoryInterface
     public static function create(
         $host,
         $port,
+        $interfaceVersion,
         $username,
         $password,
         array $serviceNumbers = array(),
@@ -35,6 +36,7 @@ class GatewayFactory implements GatewayFactoryInterface
         return new Gateway(
             $host,
             $port,
+            $interfaceVersion,
             $username,
             $password,
             $serviceNumbers,

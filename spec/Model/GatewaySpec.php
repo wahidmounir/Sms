@@ -18,12 +18,14 @@ class GatewaySpec extends ObjectBehavior
     function let(
         $host,
         $port,
+        $interfaceVersion,
         $username,
         $password
     ) {
         $this->beConstructedWith(
             $host,
             $port,
+            $interfaceVersion,
             $username,
             $password
         );
@@ -69,6 +71,11 @@ class GatewaySpec extends ObjectBehavior
     function its_port_is_immutable()
     {
         $this->shouldNotHaveMethod('setPort');
+    }
+
+    function its_interface_version_is_immutable()
+    {
+        $this->shouldNotHaveMethod('setInterfaceVersion');
     }
 
     function its_username_is_immutable()
