@@ -3,21 +3,6 @@
 An SMS component for PHP applications.
 
 ## Installation
-composer.json
-```json
-{
-    "require": {
-        "yoqut/sms": "~2.0"
-    }
-}
-```
-
-```shell
-php composer.phar install
-```
-
-or
-
 ```shell
 php composer.phar require yoqut/sms
 ```
@@ -42,6 +27,7 @@ $sms->setMessage('Message');
 $gateway = GatewayFactory::create(
     'localhost',
     2775,
+    0x34
     'username',
     'password',
     array(
@@ -77,7 +63,7 @@ if ($matchedGateway) {
 
 ## Tests
 ```shell
-vendor/phpspec/phpspec/bin/phpspec run
+bin/phpspec run
 ```
 
 ## License
