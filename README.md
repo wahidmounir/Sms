@@ -22,7 +22,7 @@ $sms->setRecipient('5550100');
 $sms->setMessage('Message');
 
 // Create a new gateway
-// Provide host, port, username, password, service numbers (optional),
+// Provide host, port, interface version, username, password, service numbers (optional),
 // prefix codes (optional) and configurations (optional)
 $gateway = GatewayFactory::create(
     'localhost',
